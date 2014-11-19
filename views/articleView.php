@@ -14,7 +14,7 @@
 <body>
 
 	<div id="user_bar">
-		
+
 		<div class="configuration">
 			<ul>
 				<li>
@@ -29,7 +29,7 @@
 						</ul>
 				</li>
 			</ul>
-		</div> 
+		</div>
 		<!-- Fin de la Config -->
 		<!-- Si l'utilisateur est connecté -->
 		<div class="user_informations">
@@ -45,16 +45,37 @@
 						Articles :
 						<br />
 						<?php
-						$requete="SELECT count(*) from article ";
-						$result= @mysql_query($requete);
-						$enreg = mysql_fetch_array($result);
-						echo $enreg[0];
+						// $requete="SELECT count(*) from article ";
+						// $result= @mysql_query($requete);
+						// $enreg = mysql_fetch_array($result);
+						// echo $enreg[0];
+						//
+						// // model
+						// function count_articles($requete)
+						// {
+						// 	$result= @mysql_query($requete);
+						// 	$enreg = mysql_fetch_array($result);
+						// 	return $enreg[0];
+						// }
+						//
+						// // controleur = plusieurs actions
+						// // if $action = 'count_article'{}
+						//
+						//
+						// $count_article_query = "SELECT count(*) from article ";
+						// $result = count_article($count_article_query);
+						//
+						//
+						// // view
+						// echo $result;
+						//
+
 						?>
 					</li>
 					<li>
 						J'aimes :
 						<br />
-						<?php 
+						<?php
 						$requete="SELECT count(*) from liked where user_like =";
 						$requete=$requete."'".$_SESSION['pseudo']."'";
 						$result= @mysql_query($requete);
@@ -62,7 +83,7 @@
 						echo $enreg[0];
 						?>
 					</li>
-				</ul>				
+				</ul>
 			</div>
 		</div>
 		<div class="user_description">
@@ -76,7 +97,7 @@
 				compte tenu du temps passé dessus !
 				<br />
 				<br />
-				Ce site a été réalisé par les soins de Julien Chambrey et 
+				Ce site a été réalisé par les soins de Julien Chambrey et
 				Romain Alberca. Nous l'avons débuté le mardi 21 octobre 2014
 				aux alentours de 18h35.
 				<br />
@@ -88,7 +109,7 @@
 	</div>
 	<div id="wrapper">
 		<div class="content">
-			<?php 
+			<?php
 				$id=$_GET['id'];
 				$requete= " SELECT * from article where id_art=".$id;
 				$result= @mysql_query($requete);

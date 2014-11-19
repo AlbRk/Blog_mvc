@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	require('configSQL.php');
 	$id=$_GET['id'];
@@ -10,11 +10,5 @@
 	if(!$result){
 		echo mysql_error();
  	}
-	else 
-	{
-		echo $content;
-		echo "ahha";
-		$_SESSION['controller']="home";
-		header('Location: index.php');
-		}
+	
 ?>

@@ -15,7 +15,7 @@
 <body>
 
 	<div id="user_bar">
-		
+
 		<div class="configuration">
 			<ul>
 				<li>
@@ -30,7 +30,7 @@
 						</ul>
 				</li>
 			</ul>
-		</div> 
+		</div>
 		<!-- Fin de la Config -->
 		<!-- Si l'utilisateur est connecté -->
 		<div class="user_informations">
@@ -55,7 +55,7 @@
 					<li>
 						J'aimes :
 						<br />
-						<?php 
+						<?php
 						$requete="SELECT count(*) from liked where user_like =";
 						$requete=$requete."'".$_SESSION['pseudo']."'";
 						$result= @mysql_query($requete);
@@ -63,7 +63,7 @@
 						echo $enreg[0];
 						?>
 					</li>
-				</ul>				
+				</ul>
 			</div>
 		</div>
 		<div class="user_description">
@@ -77,7 +77,7 @@
 				compte tenu du temps passé dessus !
 				<br />
 				<br />
-				Ce site a été réalisé par les soins de Julien Chambrey et 
+				Ce site a été réalisé par les soins de Julien Chambrey et
 				Romain Alberca. Nous l'avons débuté le mardi 21 octobre 2014
 				aux alentours de 18h35.
 				<br />
@@ -105,4 +105,14 @@
 		</div>
 	</div>
 </body>
+<?php
+	if (!empty($_SESSION))
+	{
+?>
+<script>
+	document.location.href="index.php?controller=home";
+</script>
+<?php
+	}
+?>
 </html>
