@@ -1,5 +1,5 @@
-<?php 
-include("configSQL.php"); 
+<?php
+include("configSQL.php");
 
 $pseudo=$_POST['pseudo'];
 $pass=$_POST['pass'];
